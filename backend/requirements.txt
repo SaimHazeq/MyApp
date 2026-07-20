@@ -1,0 +1,38 @@
+# --- Core API framework ---
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.9.2
+pydantic-settings==2.5.2
+email-validator>=2.2.0
+
+# --- Database / ORM ---
+sqlalchemy==2.0.35
+alembic==1.13.2
+
+# --- Auth / security ---
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# --- Background jobs ---
+celery==5.4.0
+redis==5.0.8
+
+# --- AI / media pipeline ---
+numpy==1.26.4
+pillow==10.4.0
+opencv-python-headless==4.10.0.84
+scipy==1.13.1
+imageio==2.35.1
+imageio-ffmpeg==0.5.1
+
+# --- Optional real AI provider SDKs (enable in .env when you have API keys) ---
+openai==1.47.0
+elevenlabs==1.9.0
+requests==2.32.3
+
+# --- Utilities ---
+python-dotenv==1.0.1
+loguru==0.7.2
+aiofiles==24.1.0

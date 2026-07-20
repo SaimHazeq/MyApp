@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --studio-bg: 15 18 34;
+  --studio-surface: 23 27 50;
+  --studio-surface2: 31 36 64;
+  --studio-border: 42 47 82;
+  --studio-text: 245 243 238;
+  --studio-muted: 146 150 176;
+}
+
+html.theme-light {
+  --studio-bg: 247 245 239;
+  --studio-surface: 255 255 255;
+  --studio-surface2: 240 237 228;
+  --studio-border: 228 224 211;
+  --studio-text: 34 31 43;
+  --studio-muted: 107 111 130;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(242,184,75,0.08), transparent 60%),
+    radial-gradient(1000px 500px at 110% 10%, rgba(255,93,115,0.08), transparent 60%),
+    var(--studio-bg);
+}
+
+@layer components {
+  /* The signature motif: a vertical film-strip rail of sprocket holes.
+     Used on Splash/Login for brand texture, and functionally on the
+     Generation Progress screen as the pipeline stage tracker. */
+  .film-rail {
+  @apply flex flex-col justify-between items-center py-6 w-10 bg-studio-surface2 rounded-full;
+  background-color: rgb(31 36 64 / 0.6);
+  }
+  .sprocket-hole {
+    @apply w-3 h-3 rounded-full bg-studio-bg border border-studio-border;
+  }
+  .sprocket-hole.filled {
+    @apply bg-marquee border-marquee shadow-glow;
+  }
+  .sprocket-hole.active {
+    @apply bg-reel border-reel animate-sprocketPulse;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-marquee text-studio-bg font-semibold
+           px-5 py-2.5 hover:bg-marquee-dim transition-colors disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-studio-surface2 text-studio-text font-medium
+           px-5 py-2.5 border border-studio-border hover:border-marquee/60 transition-colors disabled:opacity-50;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-danger/10 text-danger font-medium
+           px-5 py-2.5 border border-danger/40 hover:bg-danger/20 transition-colors;
+  }
+  .input-field {
+    @apply w-full rounded-lg bg-studio-bg border border-studio-border px-4 py-2.5 text-studio-text
+           placeholder:text-studio-muted focus:outline-none focus:border-marquee/70 focus:ring-1 focus:ring-marquee/40 transition;
+  }
+  .card {
+    @apply bg-studio-surface border border-studio-border rounded-2xl shadow-card;
+  }
+  .label-eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] text-marquee font-mono;
+  }
+}

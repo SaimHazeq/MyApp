@@ -1,0 +1,20 @@
+# Backend
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.env
+backend/storage/projects/*
+backend/storage/renders/*
+backend/storage/temp/*
+backend/storage/app.db
+!backend/storage/projects/.gitkeep
+!backend/storage/renders/.gitkeep
+!backend/storage/temp/.gitkeep
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# OS
+.DS_Store
